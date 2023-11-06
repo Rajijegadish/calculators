@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Calculator</title>
+		<link href="C:\Users\ADMIN\Documents\Raji\bootstrap-5.2.1-dist\bootstrap-5.2.1-dist\css\bootstrap.min.css" rel="stylesheet">
+		<style>
+			.calculator{
+			padding:10px;
+			border-radius: 10px;
+			background-color: black;
+			/* box-shadow: #3f51b5; */
+			/* outline-style: inset;
+			 */
+			}
+			#text_result{
+				/* padding: 5%; */
+				width:24.4%;
+				border-radius: 10px;
+				box-shadow: #3f51b5;
+				outline:aqua;
+				background-color:black;
+			}
+			
+			body{
+				margin:40px;
+				justify-content: center;
+				align-items: center;
+				background-color: cadetblue;
+			}
+			table,tr,td{
+			border:1px solid #3f51b5;
+			padding:20px;
+			cursor: pointer;
+			
+				}
+			.btn-color{
+				/* background-color:hsl(62deg 31% 89%); */
+				background-color: black;
+				}
+			.btn-primary{
+				background-color:black;
+				}
+		</style>
+	</head>
+	<body>
+		<script>
+			
+			function clearscreen(){
+				document.getElementById("text_result").value="";
+				}
+			
+			function display(value){
+				
+				document.getElementById("text_result").value+=value;
+				
+				}
+			
+			<!-- function hidden(value){  -->
+				 <!-- document.getElementById("text_result").value+=value;  -->
+				 <!-- var a=value;  -->
+				<!-- document.getElementById("text_result").value="";  -->
+				<!-- calculate();  -->
+				<!-- }  -->
+			function calculate(){
+			var x=document.getElementById("text_result").value;
+			var y=eval(x);
+			document.getElementById("text_result").value=y;
+			}
+			
+			<!-- function clear(value){ -->
+				<!-- var a.pop(value); -->
+				<!-- document.getElementById("text_result").value=a; -->
+				<!-- } -->
+			
+		</script>
+		<table class="calculator">
+			<tr style="width: 32%;">
+				<input type="text"class="form-control"placeholder="0"id="text_result"/>
+			</tr>
+			<tr class="btn-color">
+				<td ><input type="button" class="form-control" value="c"onclick="clearscreen()"/></td>
+				<td ><input type="button" class="form-control" value="/"onclick="display('/')"/></td>
+				<td ><input type="button" class="form-control" value="*"onclick="display('*')"/></td>
+				<td ><input type="button" class="form-control" value="x"onclick="clear('x')"/></td>
+			</tr>
+			<tr>
+				<td ><input type="button" class="form-control" value="7"onclick="display('7')"/></td>
+				<td ><input type="button" class="form-control" value="8"onclick="display('8')"/></td>
+				<td ><input type="button" class="form-control" value="9"onclick="display('9')"/></td>
+				<td class="btn-color"><input type="button" class="form-control " value="-"onclick="display('-')"/></td>
+			</tr>
+			<tr>
+				<td ><input type="button" class="form-control" value="4"onclick="display('4')"/></td>
+				<td ><input type="button" class="form-control" value="5"onclick="display('5')"/></td>
+				<td ><input type="button" class="form-control" value="6"onclick="display('6')"/></td>
+				<td class="btn-color"  ><input type="button" class="form-control " value="+"onclick="display('+')"/></td>
+			</tr>
+			<tr>
+				<td ><input type="button" class="form-control" value="1"onclick="display('1')"/></td>
+				<td ><input type="button" class="form-control" value="2"onclick="display('2')"/></td>
+				<td ><input type="button" class="form-control" value="3"onclick="display('3')"/></td>
+				<td rowspan="2" class="btn-primary"><input type="button" class="btn btn-primary" value="="onclick="calculate('=')"/></td>
+			</tr>
+			<tr>
+				<td ><input type="button" class="form-control" value="%"onclick="display('%')"/></td>
+				<td ><input type="button" class="form-control" value="0"onclick="display('0')"/></td>
+				<td ><input type="button" class="form-control" value="."onclick="display('.')"/></td>
+				
+			</tr>
+		</table>
+		
+	</body>
+	
